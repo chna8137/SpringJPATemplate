@@ -9,37 +9,36 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "NOTICE")
+@Table(name = "USER_INFO")
 @DynamicInsert
 @DynamicUpdate
 @Builder
 @Cacheable
 @Entity
-public class NoticeEntity {
+public class UserInfoEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "notice_seq")
-    private Long noticeSeq;
-
-    @NonNull
-    @Column(name = "title", length = 500, nullable = false)
-    private String title;
-
-    @NonNull
-    @Column(name = "notice_yn", length = 1, nullable = false)
-    private String noticeYn;
-
-    @NonNull
-    @Column(name = "contents", nullable = false)
-    private String contents;
-
-    @NonNull
-    @Column(name = "user_id", nullable = false)
+    @Column(name = "USER_ID")
     private String userId;
 
-    @Column(name = "read_cnt", nullable = false)
-    private Long readCnt;
+    @NonNull
+    @Column(name = "USER_NAME", length = 500, nullable = false)
+    private String userName;
+
+    @NonNull
+    @Column(name = "PASSWORD", length = 1, nullable = false)
+    private String password;
+
+    @NonNull
+    @Column(name = "EMAIL", nullable = false)
+    private String email;
+
+    @NonNull
+    @Column(name = "ADDR1", nullable = false)
+    private String addr1;
+
+    @Column(name = "ADDR2", nullable = false)
+    private String addr2;
 
     @Column(name = "reg_id", updatable = false)
     private String regId;
